@@ -22216,7 +22216,10 @@
 
 	    handleNewData: function handleNewData(updates) {
 	        //this.setState(updates);
-	        this.setState({ updates: updates });
+	        this.setState({
+	            name: updates.name,
+	            message: updates.message
+	        });
 	    },
 
 	    render: function render() {

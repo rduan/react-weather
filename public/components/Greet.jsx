@@ -26,7 +26,11 @@ var Greet = React.createClass({
 
     handleNewData: function(updates) {
         //this.setState(updates);
-        this.setState({updates});
+        this.setState({
+            name: updates.name,
+            message: updates.message
+        });
+
     },
 
     render: function(){
