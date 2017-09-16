@@ -38,4 +38,5 @@ addPromise(2,3).then((v)=>{
     console.log('success',v);
 },(err)=>{
     console.log('error',err);
-})
+});
+
