@@ -1,20 +1,27 @@
 var React = require('react');
 var WeatherForm = require('./weather-form');
 var WeatherMessage = require('./weather-message');
+var openWeatherMap = require('../api/open-weather-map');
 
 var Weather= React.createClass({
 
     getInitialState(){
         return {
-            location: "Melbourne",
-            temp: 90
+            
         }
     },
     handleSearch(location){
-        this.setState({
+        var that = this;
+
+        openWeatherMap.getTemp(location).then((temp)=>{
+            that.setState({
             location,
-            temp:23
+            temp
+        });
+        },(errorMessage)=>{
+            alert(errorMessage);
         })
+        
     },
 
     render: function() {
